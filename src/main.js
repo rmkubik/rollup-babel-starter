@@ -1,4 +1,3 @@
-import "core-js/stable";
 import foo from "./foo";
 
 export default function(...test) {
