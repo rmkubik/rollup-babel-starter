@@ -1,21 +1,9 @@
-import babel from "rollup-plugin-babel";
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
-import minify from "rollup-plugin-babel-minify";
+import base from "./rollup.config.base";
 
 export default {
-  input: "src/main.js",
+  ...base,
   output: {
-    name: "rollup-test",
-    file: "dist/bundle.js",
-    format: "umd",
+    ...base.output,
     sourcemap: true
-  },
-  plugins: [
-    resolve(),
-    commonjs(),
-    babel({
-      exclude: ["node_modules/**"]
-    })
-  ]
+  }
 };
